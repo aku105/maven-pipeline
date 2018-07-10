@@ -1,24 +1,10 @@
-@Library('maven')_
+@Library('shared-lib')_
 pipeline {
     agent any
     stages{
-        stage('Quality') {
-             parallel{
-                stage('Test'){
-                    steps{
-                        mavenTest 'M3'
-                    }
-                }
-                stage('Sonar'){
-                    steps{
-                        mavenSonar 'M3'
-                    }
-                }
-            }
-        }
-        stage('Build'){
+        stage('Run Maven') {
             steps{
-                mavenBuild 'M3'
+                mavenBnR()
             }
         }
     }
