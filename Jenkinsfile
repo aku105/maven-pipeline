@@ -2,12 +2,13 @@
 pipeline {
     agent any
     stages{
-        stage('Pre-build') {
-            parallel{
+        parallel{
+            stage('Test') {
                 steps{
                     mavenTest 'M3'
-                    mavenSonar 'M3'
                 }
+            }
+            stage('Sonar') {
                 steps{
                     mavenSonar 'M3'
                 }
@@ -15,7 +16,7 @@ pipeline {
         }
         stage('Build'){
             steps{
-                    mavenBuild 'M3'
+                mavenBuild 'M3'
             }
         }
     }
