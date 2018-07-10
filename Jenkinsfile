@@ -4,9 +4,9 @@ pipeline {
     stages{
         stage('Demo') {
             steps{
-                mavenTest 'M2'
-                mavenBuild 'M2'
-                mavenSonar 'M2'
+                mavenTest 'M3'
+                mavenBuild 'M3'
+                mavenSonar 'M3'
             }
         }
     }
