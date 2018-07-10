@@ -13,9 +13,10 @@ pipeline {
                     try{
                         steps{
                             mavenSonar 'M3'
-                        } catch(err) {
-                            echo err
-                        }
+                        } 
+                    } catch(err) {
+                        echo err
+                    }
                     }
                 }
             }
