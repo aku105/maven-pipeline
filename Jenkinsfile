@@ -4,7 +4,9 @@ pipeline {
     stages{
         stage('Demo') {
             steps{
-                mavenTest 'amit'
+                mavenTest
+                mavenBuild
+                mavenSonar
             }
         }
     }
