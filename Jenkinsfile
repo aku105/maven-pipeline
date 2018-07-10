@@ -1,4 +1,4 @@
-@Library('maven')_
+@Library('shared-lib')_
 pipeline {
     agent any
     stages{
