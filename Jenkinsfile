@@ -4,7 +4,7 @@ pipeline {
     stages{
         stage('Run Maven') {
             steps{
-                mavenBnR 'm3'
+                mavenBnR 'M3'
             }
         }
     }
