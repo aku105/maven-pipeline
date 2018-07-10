@@ -10,12 +10,8 @@ pipeline {
                     }
                 }
                 stage('Sonar'){
-                    try{
-                        steps{
-                            mavenSonar 'M3'
-                        } 
-                    } catch(err) {
-                        echo err
+                    steps{
+                        mavenSonar 'M3'
                     }
                 }
             }
