@@ -3,11 +3,6 @@
 pipeline {
     agent any
     stages{
-        stage('Checkout') {
-            steps{
-                downloadSource()
-            }
-        }
         stage('Test') {
             steps{
                 mvnTest()
