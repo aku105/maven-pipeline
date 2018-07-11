@@ -1,4 +1,4 @@
-// @Library('jenkins-dry-in-pipelines') _
+@Library('jenkins-dry') _
 
 pipeline {
     agent any
@@ -11,12 +11,12 @@ pipeline {
         }
         stage('Test') {
             steps{
-                mvnTest()
+                mvn "clean test"
             }
         }
         stage('Package') {
             steps{
-                mvnPackage()
+                mvn "clean package"
             }
         }
     }
