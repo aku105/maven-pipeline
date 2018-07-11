@@ -1,10 +1,21 @@
-@Library('shared-lib')_
+@Library('jenkins-dry-in-pipelines') _
+
 pipeline {
     agent any
     stages{
-        stage('Run Maven') {
+        stage('Checkout') {
             steps{
-                mavenBnR()
+                downloadSource()
+            }
+        }
+        stage('Test') {
+            steps{
+                mvnTest()
+            }
+        }
+        stage('Package') {
+            steps{
+                mvnPackage()
             }
         }
     }
